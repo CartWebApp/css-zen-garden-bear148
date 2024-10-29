@@ -17,7 +17,11 @@ h3 {
 }
 
 .page-wrapper {
+	display: flex;
+	flex-flow: column;
 	max-width: 1440px;
+	margin-right: auto;
+    margin-left: auto;
 }
 
 #zen-summary {
@@ -46,12 +50,16 @@ div h3 {
 	margin: 25px;
 }
 
-.participation {
-	box-shadow: 0px 0px 10px 0px #A8A8A8;
+.page-wrapper .intro:not() {
+	width: 1140px;
 }
 
-.benefits {
-	box-shadow: 0px 9px 15px 0px #A8A8A8;
+header[role="banner"] {
+	width: 1440px;
+}
+
+.participation {
+	box-shadow: 0px 0px 10px 0px #A8A8A8;
 }
 
 .participation, .benefits {
@@ -69,3 +77,49 @@ div h3 {
 	margin: 0;
 }
 
+aside.sidebar {
+	color: white;
+	width: 300px;
+	align-self: flex-end;
+	justify-content: flex-start;
+	background-color: black;
+	position: absolute;
+	top: 718px;
+}
+
+aside.sidebar .wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+aside.sidebar .wrapper > div {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.select, .archives, .resources {
+	font-size: 36px;
+	align-self: center;
+}
+
+nav > ul {
+	padding-left: 25px;
+	padding-right: 15px;
+}
+
+.zen-resources ul:nth-child(2) {
+	padding-left: 25px;
+}
+
+aside.sidebar li {
+	list-style: none;
+}
+
+.main.supporting {
+	width: 1140px;
+}
+
+.intro:not(header) {
+	width: 1140px;
+}
