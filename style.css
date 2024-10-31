@@ -313,7 +313,7 @@ h3 ~ p {
 }
 
 p[role="contentinfo"] {
-	color: red;
+	font-weight: 400;
 }
 
 ::selection {
