@@ -2,6 +2,7 @@
 
 :root {
 	--gray-bg: rgb(217, 217, 217);
+	--dark-gray-bg: rgb(134, 134, 134);
 }
 
 * {
@@ -99,7 +100,7 @@ aside.sidebar {
 	background-image: url(/img/sidebar.png);
 	position: absolute;
 	top: 718px;
-	height: 2752px;
+	height: 2600px;
 }
 
 aside.sidebar .wrapper {
@@ -177,7 +178,7 @@ div.main div:nth-last-child(1) {
 }
 
 p:first-of-type::first-letter {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 h3::first-line {
@@ -201,11 +202,38 @@ a:active {
 }
 
 a:not([href*="zengarden"]):hover::before {
-	content: url(/img/important2.gif);
+	content: "";
+	background-image: url(/img/cone.png);
+	background-size: 15px 15px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
 }
 
 a[href^="http"]:hover, a[href^="https"]:hover {
 	color:lightblue;
+}
+
+a[href$="/"]:hover, a[href$="page1"]:hover {
+	color:lightblue;
+}
+
+a[href$=".css"]:hover::before {
+	content: "";
+	background-image: url(/img/css.png);
+	background-size: 15px 15px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+}
+
+a[href$="index"]:hover::before {
+	content: "";
+	background-image: url(/img/html.png);
+	background-size: 15px 15px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
 }
 
 abbr[title]:not(a abbr:first-child) {
@@ -259,8 +287,33 @@ abbr:only-child:hover::after {
 }
 
 footer {
-	background-color: var(--gray-bg);
+	background-color: var(--dark-gray-bg);
 	padding-left: 25px;
+}
+
+aside a:nth-of-type(2) {
+	color: darkblue;
+}
+
+aside a:only-of-type {
+	text-decoration: none;
+}
+
+.requirements p:nth-last-child(1) {
+	background-color: var(--gray-bg);
+	background-size: cover;
+	margin-left: -25px;
+	padding-left: 25px;
+	padding-bottom: 25px; 
+	margin-bottom: -25px;
+}
+
+h3 ~ p {
+	font-weight: 300;
+}
+
+p[role="contentinfo"] {
+	color: red;
 }
 
 ::selection {
