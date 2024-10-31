@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+:root {
+	--gray-bg: rgb(217, 217, 217);
+}
+
 * {
 	font-family: "Jost";
 	font-size: 24px;
@@ -9,6 +13,7 @@ body {
 	color: black;
 	font-family: "Jost";
 	margin: 0;
+	background-color: rgb(67, 67, 67);
 }
 
 h3 {
@@ -22,13 +27,14 @@ h3 {
 	max-width: 1440px;
 	margin-right: auto;
     margin-left: auto;
+	background-color: white;
 }
 
 #zen-summary {
 	padding-left: 25px;
 	padding-top: 12px;
 	padding-bottom: 25px;
-	background-color: rgb(217, 217, 217);
+	background-color: var(--gray-bg);
 }
 
 #zen-benefits h3 {
@@ -64,11 +70,17 @@ header[role="banner"] {
 	width: 1440px;
 }
 
-.participation, .benefits {
+div + .participation {
 	background-position: center;
 	background-size: 105%;
-	background-color: rgb(217, 217, 217);
+	background-color: var(--gray-bg);
 	
+}
+
+.participation + .benefits {
+	background-position: center;
+	background-size: 105%;
+	background-color: var(--gray-bg);
 }
 
 .participation h3:nth-child(1), .beneftis h3:nth-child(1) {
@@ -84,15 +96,17 @@ aside.sidebar {
 	width: 300px;
 	align-self: flex-end;
 	justify-content: flex-start;
-	background-color: black;
+	background-image: url(/img/sidebar.png);
 	position: absolute;
 	top: 718px;
+	height: 2752px;
 }
 
 aside.sidebar .wrapper {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
+	background-color: black;
 }
 
 aside.sidebar .wrapper > div {
@@ -158,10 +172,6 @@ div.main div:nth-last-child(1) {
 	margin-bottom: 0;
 }
 
-.requirements h3:first-child {
-	
-}
-
 .requirements {
 	padding-left: 25px;
 }
@@ -175,19 +185,82 @@ h3::first-line {
 }
 
 a:visited {
-	color: darkgray;
-}
-
-a[title] {
-	color: white;
-}
-
-a[href] {
-	color: white;
+	color: lightskyblue;
 }
 
 a:hover {
 	color: blue;
+}
+
+a:link {
+	text-decoration: underline;
+}
+
+a:active {
+	color: red;
+}
+
+a:not([href*="zengarden"]):hover::before {
+	content: url(/img/important2.gif);
+}
+
+a[href^="http"]:hover, a[href^="https"]:hover {
+	color:lightblue;
+}
+
+abbr[title]:not(a abbr:first-child) {
+	color:darkgoldenrod;
+	border: none;
+	text-decoration: none;
+	text-decoration-style: none;
+}
+
+abbr:hover::after {
+	color: blue;
+	padding-left: 5px;
+	padding-right: 5px;
+
+	content: attr(title);
+}
+
+[class|="design"]:not(div):hover, [class|="designer"]:not(div):hover {
+	background-color: yellow;
+	color: black;
+}
+
+abbr:only-child:hover::after {
+	position: absolute;
+	right: 100%;
+	color: white;
+	font-size: 18px;
+	background-color: black;
+	content: attr(title);
+	min-width: 200px;
+}
+
+.design-selection nav ul li:last-of-type::after {
+	content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+	top: 675px;
+	left: 75px;
+    background: white;
+}
+
+.design-archives nav ul li:last-of-type::after {
+	content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+	top: 915px;
+	left: 75px;
+    background: white;
+}
+
+footer {
+	background-color: var(--gray-bg);
+	padding-left: 25px;
 }
 
 ::selection {
